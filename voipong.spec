@@ -12,6 +12,7 @@ Patch0:		voipong-2.0-mdv_conf.diff
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
 BuildRequires:	libpcap-devel
+BuildRoot:      %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 VoIPong is a utility which detects all Voice Over IP calls on a
