@@ -53,7 +53,7 @@ install -d %{buildroot}%{_sysconfdir}/%{name}
 install -d %{buildroot}%{_sysconfdir}/sysconfig
 install -d %{buildroot}%{_sbindir}
 install -d %{buildroot}%{_libdir}/%{name}
-install -d %{buildroot}%{_localstatedir}/%{name}
+install -d %{buildroot}%{_localstatedir}/lib/%{name}
 install -d %{buildroot}/var/run/%{name}
 install -d %{buildroot}/var/log/%{name}
 
@@ -107,7 +107,7 @@ EOF
 %attr(0755,root,root) %{_sbindir}/voipctl
 %attr(0755,root,root) %dir %{_libdir}/%{name}
 %attr(0755,root,root) %{_libdir}/%{name}/*.so
-%attr(0755,root,root) %dir %{_localstatedir}/%{name}
+%attr(0755,root,root) %dir %{_localstatedir}/lib/%{name}
 %attr(0755,root,root) %dir /var/run/%{name}
 %attr(0755,root,root) %dir /var/log/%{name}
 
