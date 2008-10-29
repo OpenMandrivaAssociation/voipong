@@ -1,7 +1,7 @@
 Summary:	VoIPong Voice Over IP Sniffer
 Name:		voipong
 Version:	2.0
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPL
 Group:		System/Servers
 URL:		http://www.enderunix.org/voipong/
@@ -12,7 +12,7 @@ Patch0:		voipong-2.0-mdv_conf.diff
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
 BuildRequires:	libpcap-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 VoIPong is a utility which detects all Voice Over IP calls on a
