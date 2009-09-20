@@ -1,7 +1,7 @@
 Summary:	VoIPong Voice Over IP Sniffer
 Name:		voipong
 Version:	2.0
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPL
 Group:		System/Servers
 URL:		http://www.enderunix.org/voipong/
