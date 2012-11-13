@@ -1,0 +1,57 @@
+diff -Naur voipong-2.0/etc/voipong.conf voipong-2.0.oden/etc/voipong.conf
+--- voipong-2.0/etc/voipong.conf	2005-12-04 15:27:35.000000000 +0100
++++ voipong-2.0.oden/etc/voipong.conf	2006-02-12 16:28:26.000000000 +0100
+@@ -23,20 +23,19 @@
+ #
+ 
+ [GENERAL]
+-logdir = /var/log
++logdir = /var/log/voipong
+ logfile = voipong.log
+-cdrfile = /var/log/voipcdr.log
+-networksfile = /usr/local/etc/voipong/voipongnets
+-pidfile = /var/run/voipong.pid
+-mgmt_ipcpath = /tmp/voipongmgmt.sock
+-soxpath = /usr/local/bin/sox
+-soxmixpath = /usr/local/bin/soxmix
+-modpath = /usr/local/etc/voipong/modules
++cdrfile = /var/log/voipong/voipcdr.log
++networksfile = /etc/voipong/voipongnets
++pidfile = /var/run/voipong/voipong.pid
++mgmt_ipcpath = /var/lib/voipong/voipongmgmt.sock
++soxpath = /usr/bin/sox
++soxmixpath = /usr/bin/soxmix
++modpath = /usr/lib/voipong
+ mixwaves = 1
+ defalg = lfp
+ rtp_idle_time = 10
+-#device = fxp0
+-device = em0
++device = eth0
+ promisc = 1
+ snaplen = 1500
+ readtmt = 500
+diff -Naur voipong-2.0/voipctl.c voipong-2.0.oden/voipctl.c
+--- voipong-2.0/voipctl.c	2005-12-09 15:59:26.000000000 +0100
++++ voipong-2.0.oden/voipctl.c	2006-02-12 16:14:44.000000000 +0100
+@@ -79,7 +79,7 @@
+ 	gthisday = tm.tm_mday;
+ 	gthismon = tm.tm_mon;
+ 
+-	strcpy(gcfgfile, "/usr/local/etc/voipong/voipong.conf");
++	strcpy(gcfgfile, "/etc/voipong/voipong.conf");
+ 	while (!error && (c = getopt(argc, argv, "c:hv")) != -1) {
+ 		switch(c) {
+ 			case 'v':
+diff -Naur voipong-2.0/voipong.c voipong-2.0.oden/voipong.c
+--- voipong-2.0/voipong.c	2005-12-09 15:59:26.000000000 +0100
++++ voipong-2.0.oden/voipong.c	2006-02-12 16:14:56.000000000 +0100
+@@ -170,7 +170,7 @@
+ 	gthisday = tm.tm_mday;
+ 	gthismon = tm.tm_mon;
+ 
+-	strcpy(gcfgfile, "/usr/local/etc/voipong/voipong.conf");
++	strcpy(gcfgfile, "/etc/voipong/voipong.conf");
+ 	while (!error && (c = getopt(argc, argv, "c:d:hvf")) != -1) {
+ 		switch(c) {
+ 			case 'v':
