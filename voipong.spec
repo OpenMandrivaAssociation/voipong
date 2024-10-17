@@ -4,7 +4,7 @@ Version:	2.0
 Release:	7
 License:	GPL
 Group:		System/Servers
-URL:		http://www.enderunix.org/voipong/
+URL:		https://www.enderunix.org/voipong/
 Source0:	http://www.enderunix.org/voipong/%{name}-%{version}.tar.bz2
 Source1:	voipong.init.bz2
 Source2:	voipong.sysconfig.bz2
