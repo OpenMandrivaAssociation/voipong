@@ -11,6 +11,7 @@ Source2:	voipong.sysconfig.bz2
 Patch0:		voipong-2.0-mdv_conf.diff
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
+BuildRequires:	make
 BuildRequires:	libpcap-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
